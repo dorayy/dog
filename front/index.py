@@ -1,6 +1,7 @@
 import requests
 import streamlit as st
 from PIL import Image
+import json
 
 st.title("Doggy Dog")
 
@@ -28,6 +29,7 @@ if st.button('Envoyer'):
 
     # send image file to api without request
     response = requests.post(endPoint, files=files, headers=headers)
+    response_string = response.json()
+    response_json = json.loads(response_string)
 
-    # log the response
-    st.write(response.json())
+    st.table(response_json)
