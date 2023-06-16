@@ -2,4 +2,5 @@ pip install fastapi
 pip install pydantic
 pip install uvicorn
 pip install python-multipart
+pip install tensorflow
 uvicorn fast_api:app --reload
